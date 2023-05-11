@@ -13,7 +13,7 @@ const Navbar = async (props: Props) => {
   return (
     <div className='p-4 flex flex-auto justify-between'>
         <Link href='/' className='font-bold text-2xl'>
-         Postyvity
+         Elevateq
         </Link>
        <ul>
        
