@@ -1,8 +1,9 @@
+
 import React from 'react'
 import Link from 'next/link'
 import Login from '../auth/Login'
 import { getServerSession } from 'next-auth'
-import { authOptions } from '../api/auth/[...nextauth]/route'
+import { authOptions } from '@/lib/auth'
 import LogOut from '../auth/LogOut'
 type Props = {}
 
