@@ -8,7 +8,7 @@ type Props = {}
 
 const Navbar = async (props: Props) => {
   const session =  await getServerSession(authOptions);
-  console.log(session);
+
 
   return (
     <div className='p-4 flex flex-auto justify-between'>
