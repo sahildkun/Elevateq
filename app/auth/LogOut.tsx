@@ -20,7 +20,7 @@ const LogOut = ({image}: Props) => {
     const logOutHandler = async () => {
       setLoggedOut(true);
       await signOut();
-      
+         
     }
   return (
     <li className="flex gap-8 items-center">
