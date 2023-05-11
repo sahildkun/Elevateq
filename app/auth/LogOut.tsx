@@ -26,7 +26,7 @@ const LogOut = ({image}: Props) => {
     <li className="flex gap-8 items-center">
     <button
       className="bg-gray-700 text-white text-sm px-6 py-2 rounded-md "
-      onClick={logOutHandler}
+      onClick={logOutHandler}  
     >
       {!loggedOut ?  'Sign Out' : "Signing out "}
     </button>
