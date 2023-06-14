@@ -1,7 +1,8 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import Navbar from './components/Navbar'
+import Navbar from './components/navref'
 import { Toaster } from 'sonner'
+import MainNavbar from './components/Navbar'
 const inter = Inter({ subsets: ['latin'] })
 import QueryWrapper from './components/QueryWrapper'
 export const metadata = {
@@ -17,10 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        
+      {/* @ts-expect-error Server Component */} 
+        <MainNavbar/>
         <QueryWrapper>
-       <Toaster/>
-       {/* @ts-expect-error Server Component */}
-        <Navbar/>
         {children}
         </QueryWrapper>
       </body>

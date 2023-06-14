@@ -1,16 +1,22 @@
 "use client"
 
 import { signIn } from "next-auth/react"
+import { Button } from "../components/ui/button"
 
 export default function Login() {
+
+  const handler = async () => 
+  {
+   
+    await signIn();
+    
+  }
+
+  
   return (
-    <li>
-      <button className="bg-gray-700 text-white text-sm px-6 py-2 rounded-md "
-       onClick={async () => 
-        {
-          await signIn()
-        }
-        }>Sign In</button>
-    </li>
+  
+      <Button className="bg-primary-gradient rounded-full "
+       onClick={handler}>Sign Up</Button>
+  
   )
-}
+  }

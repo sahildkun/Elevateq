@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
  import { authOptions } from '@/lib/auth';
-import prisma from '../../../prisma/client'
+import prisma from '../../../../prisma/client'
 
 
 export async function GET() {
@@ -16,7 +16,7 @@ export async function POST(request : Request) {
     console.log(session);
     if(!session){ 
         console.log('no user')
-        return NextResponse.json({message: 'pls sign in to add post'}, {status: 401});
+        return NextResponse.json({message: 'pls sign in to add post'}, {status: 500});
     }
 
 

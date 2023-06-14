@@ -1,27 +1,23 @@
 
 import React from 'react'
-import Link from 'next/link'
-import Login from '../auth/Login'
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/lib/auth'
-import LogOut from '../auth/LogOut'
+import Navbar from './navref'
+import HeaderNav from './hamburger.server'
 type Props = {}
 
-const Navbar = async (props: Props) => {
-  const session =  await getServerSession(authOptions);
 
 
+
+const MainNavbar = async (props: Props) => {
+ 
+ 
   return (
-    <div className='p-4 flex flex-auto justify-between'>
-        <Link href='/' className='font-bold text-2xl'>
-         Elevateq
-        </Link>
-       <ul>
-       
-        {!session?.user  ? <Login/> :  <LogOut image={session.user!.image!}/>}
-        </ul>
-    </div>
+    <>
+    <Navbar>
+     {/* @ts-expect-error Server Component  */}
+      <HeaderNav/>
+    </Navbar>
+    </>
   )
 }
 
-export default Navbar
+export default MainNavbar

@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 import { signOut } from 'next-auth/react'
 import Link from 'next/link'
 import Image from 'next/image'
-
-
+import { useRouter } from 'next/navigation'
+ 
 
 
 
@@ -16,10 +16,11 @@ type Props = {
 
 const LogOut = ({image}: Props) => {
     const [loggedOut, setLoggedOut] = useState(false);
-   
+    const router = useRouter()
     const logOutHandler = async () => {
       setLoggedOut(true);
       await signOut();
+      () => router.refresh();
          
     }
   return (
@@ -30,11 +31,11 @@ const LogOut = ({image}: Props) => {
     >
       {!loggedOut ?  'Sign Out' : "Signing out "}
     </button>
-    <Link href={"/dashboard"}>
+    <Link href={"/"}>
       <Image
-        width={64}
-        height={64}
-        className="w-14 rounded-full"
+        width={40}
+        height={40}
+        className="w-10 rounded-full"
         src={image}
         alt=""
         priority
